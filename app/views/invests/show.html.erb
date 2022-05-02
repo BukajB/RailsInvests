@@ -1,0 +1,11 @@
+
+
+<%= render @invest %>
+
+<div>
+  <%= link_to "Edit this investment", edit_invest_path(@invest), class:'btn btn-primary' %>
+  <br/><br/>
+  <%= button_to "Delete this investment", @invest, method: :delete, class:'btn btn-outline-danger' %>
+  <br/>
+  <%= link_to "Back to investments overwiew", invests_path, class:'btn btn-dark'  %>
+</div>

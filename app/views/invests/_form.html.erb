@@ -1,0 +1,69 @@
+<%= form_with(model: invest) do |form| %>
+  <% if invest.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(invest.errors.count, "error") %> prohibited this invest from being saved:</h2>
+
+      <ul>
+        <% invest.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :asset_name, style: "display: block" %>
+    <%= form.text_field :asset_name %>
+  </div>
+
+  <div>
+    <%= form.label :bought_amount, style: "display: block" %>
+    <%= form.text_field :bought_amount %>
+  </div>
+
+  <div>
+    <%= form.label :buy_price, style: "display: block" %>
+    <%= form.text_field :buy_price %>
+  </div>
+
+  <div>
+    <%= form.label :buy_fees, style: "display: block" %>
+    <%= form.text_field :buy_fees %>
+  </div>
+
+  <div>
+    <%= form.label :total_input, style: "display: block" %>
+    <%= form.text_field :total_input %>
+  </div>
+
+  <div>
+    <%= form.label :sold_amount, style: "display: block" %>
+    <%= form.text_field :sold_amount %>
+  </div>
+
+  <div>
+    <%= form.label :sell_price, style: "display: block" %>
+    <%= form.text_field :sell_price %>
+  </div>
+
+  <div>
+    <%= form.label :sell_fees, style: "display: block" %>
+    <%= form.text_field :sell_fees %>
+  </div>
+
+  <div>
+    <%= form.label :total_output, style: "display: block" %>
+    <%= form.text_field :total_output %>
+  </div>
+
+  <div>
+   
+    <%= form.number_field :user_id, id: :invest_user_id, value: current_user.id, type: :hidden %>
+  </div>
+  
+
+
+  <div>
+    <%= form.submit 'Create Investment' %>
+  </div>
+<% end %>
