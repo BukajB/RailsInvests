@@ -2,7 +2,7 @@
 
 <% if user_signed_in? %>
 
-  <table class="table table-light table-striped table-bordered table-hover table-sm" >
+  <table class="table table-primary table-striped table-bordered table-hover table-sm" >
     <thead class="table-dark">
       <p>
         <tr>
@@ -25,7 +25,7 @@
       <% @invests.each do |invest| %>
         <% if invest.user == current_user %>
         <tr>
-          <td><%= link_to invest.asset_name, invest,  class:'btn btn-dark' %> </td>
+          <td><%= link_to invest.asset_name, invest %> </td>
           <td><%= invest.bought_amount %></td>
           <td><%= invest.buy_price %></td>
           <td><%= invest.buy_fees %></td>
@@ -44,7 +44,7 @@
     </tbody>
   </table>
 
-  <%= link_to "New Investment", new_invest_path, class:'btn btn-primary' %>
+  <%= link_to "New Investment", new_invest_path, class:'btn btn-dark' %>
 <% else %> 
 
 <h1>Investments tracker</h1>
