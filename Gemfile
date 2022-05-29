@@ -44,6 +44,8 @@ gem "bootsnap", require: false
 
 gem 'devise'
 
+
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -59,6 +61,17 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
   gem "letter_opener"
+
+  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  # gem "rack-mini-profiler"
+
+  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  # gem "spring"
+end
+
+group :production do
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'pg', '~> 1.3', '>= 1.3.5' 
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
